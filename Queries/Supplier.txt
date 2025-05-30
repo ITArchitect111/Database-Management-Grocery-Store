@@ -2,8 +2,6 @@ INSERT INTO grocery.supplier(SupplierName,Address,BrandName)VALUES('James Pascua
 
 SELECT * FROM grocery.supplier;
 
-UPDATE grocery.supplier SET SupplierName = 'Nino Calonia',Address = 'Bohol', BrandName = 'Knor' WHERE Sup_ID = 4;
-UPDATE grocery.supplier SET SupplierName = 'Ferdiand Santos',Address = 'Cavite', BrandName = 'None' WHERE Sup_ID = 5;
-UPDATE grocery.supplier SET SupplierName = 'Jayson Walter',Address = 'International(USA)', BrandName = 'Selecta' WHERE Sup_ID = 6;
-UPDATE grocery.supplier SET Address = 'Taguig' WHERE Sup_ID = 10;
-DELETE FROM grocery.supplier WHERE Sup_ID = 1;
+UPDATE grocery.supplier SET Address = 'Taguig' WHERE Sup_ID = 7;
+
+DELETE FROM grocery.supplier WHERE Sup_ID = 7;
