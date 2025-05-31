@@ -49,3 +49,5 @@ INSERT INTO grocery.product (Sup_ID, ProdName, ProdType, UnitWeight, Price) VALU
 (48, 'Canned Spaghetti Sauce', 'Preserved Food', 0.75, 60.00),
 (49, 'Fresh Calamansi Bag', 'Fresh', 0.5, 33.00),
 (50, 'Frozen Kikiam Street Style', 'Frozen', 0.7, 90.00);
+
+SELECT * FROM grocery.product;
