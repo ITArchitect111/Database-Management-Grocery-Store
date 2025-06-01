@@ -50,6 +50,24 @@ INSERT INTO grocery.inventory (Inv_P_ID, Stock_Quantity, ReOrder_Level, Storing_
 (49, 52, 10, 'Tray'),
 (50, 63, 15, 'Cabinet');
 
+INSERT INTO grocery.inventory (Inv_P_ID, Stock_Quantity, ReOrder_Level, Storing_Location)
+SELECT
+  p.P_ID,
+  FLOOR(50 + RAND() * 450), -- Stock_Quantity (50–500)
+  FLOOR(20 + RAND() * 80),  -- ReOrder_Level (20–100)
+  CASE
+    WHEN p.ProdType = 'Frozen' THEN 'Freezer'
+    WHEN p.ProdType = 'Fresh' THEN 'Tray'
+    WHEN p.ProdType = 'Preserved Food' THEN 'Cabinet'
+    WHEN p.ProdType = 'Medical Supply' THEN 'Box'
+    WHEN p.ProdType = 'Body Supply' THEN 'Box'
+    WHEN p.ProdType = 'School Supply' THEN 'Cabinet'
+    ELSE 'Box'
+  END AS Storing_Location
+FROM grocery.product p
+ORDER BY RAND()
+LIMIT 50;
+
 SELECT * FROM grocery.inventory;
 
 SELECT
@@ -61,5 +79,8 @@ SELECT
     WHEN Stock_Quantity <= 50 THEN 'Low Stock'
     ELSE 'Stock OK'
   END AS InventoryStatus
-FROM grocery.inventory;
+FROM grocery.inventory
+ORDER BY Stock_Quantity ASC;
+
+
 
