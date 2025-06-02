@@ -1,72 +1,54 @@
 INSERT INTO grocery.inventory (Inv_P_ID, Stock_Quantity, ReOrder_Level, Storing_Location) VALUES
 (1, 88, 10, 'Freezer'),
-(2, 45, 7, 'Box'),
-(3, 76, 15, 'Tray'),
-(4, 23, 9, 'Cabinet'),
-(5, 34, 12, 'Box'),
-(6, 59, 8, 'Freezer'),
-(7, 67, 10, 'Tray'),
-(8, 42, 11, 'Cabinet'),
+(1, 45, 7, 'Box'),
+(1, 0, 9, 'Cabinet'),
+(2, 1, 12, 'Box'),
+(2, 5, 8, 'Freezer'),
+(7, 0, 10, 'Tray'),
+(8, 2, 11, 'Cabinet'),
 (9, 91, 18, 'Box'),
-(10, 30, 6, 'Tray'),
-(11, 84, 14, 'Freezer'),
-(12, 22, 5, 'Box'),
-(13, 73, 13, 'Tray'),
-(14, 66, 19, 'Cabinet'),
-(15, 57, 16, 'Box'),
-(16, 32, 9, 'Tray'),
-(17, 40, 7, 'Cabinet'),
-(18, 25, 6, 'Freezer'),
-(19, 69, 11, 'Tray'),
-(20, 53, 10, 'Box'),
-(21, 61, 8, 'Freezer'),
-(22, 78, 17, 'Cabinet'),
-(23, 46, 12, 'Tray'),
-(24, 29, 6, 'Box'),
-(25, 39, 5, 'Freezer'),
-(26, 85, 13, 'Cabinet'),
-(27, 58, 15, 'Tray'),
-(28, 48, 10, 'Box'),
-(29, 90, 14, 'Freezer'),
-(30, 35, 7, 'Cabinet'),
-(31, 38, 11, 'Tray'),
-(32, 27, 6, 'Box'),
-(33, 50, 9, 'Freezer'),
-(34, 31, 8, 'Tray'),
-(35, 64, 16, 'Cabinet'),
-(36, 80, 18, 'Box'),
-(37, 21, 5, 'Tray'),
-(38, 41, 7, 'Freezer'),
-(39, 62, 12, 'Cabinet'),
-(40, 55, 10, 'Tray'),
-(41, 60, 8, 'Box'),
-(42, 49, 14, 'Cabinet'),
-(43, 36, 13, 'Tray'),
-(44, 43, 9, 'Freezer'),
-(45, 47, 11, 'Cabinet'),
-(46, 26, 6, 'Tray'),
-(47, 33, 8, 'Box'),
-(48, 86, 17, 'Freezer'),
-(49, 52, 10, 'Tray'),
-(50, 63, 15, 'Cabinet');
-
-INSERT INTO grocery.inventory (Inv_P_ID, Stock_Quantity, ReOrder_Level, Storing_Location)
-SELECT
-  p.P_ID,
-  FLOOR(50 + RAND() * 450), -- Stock_Quantity (50–500)
-  FLOOR(20 + RAND() * 80),  -- ReOrder_Level (20–100)
-  CASE
-    WHEN p.ProdType = 'Frozen' THEN 'Freezer'
-    WHEN p.ProdType = 'Fresh' THEN 'Tray'
-    WHEN p.ProdType = 'Preserved Food' THEN 'Cabinet'
-    WHEN p.ProdType = 'Medical Supply' THEN 'Box'
-    WHEN p.ProdType = 'Body Supply' THEN 'Box'
-    WHEN p.ProdType = 'School Supply' THEN 'Cabinet'
-    ELSE 'Box'
-  END AS Storing_Location
-FROM grocery.product p
-ORDER BY RAND()
-LIMIT 50;
+(10, 0, 6, 'Tray'),
+(1, 4, 14, 'Freezer'),
+(2, 22, 5, 'Box'),
+(3, 3, 13, 'Tray'),
+(4, 66, 19, 'Cabinet'),
+(5, 7, 16, 'Box'),
+(6, 0, 9, 'Tray'),
+(1, 40, 7, 'Cabinet'),
+(4, 25, 6, 'Freezer'),
+(10, 69, 11, 'Tray'),
+(10, 53, 10, 'Box'),
+(2, 61, 8, 'Freezer'),
+(2, 78, 17, 'Cabinet'),
+(3, 46, 12, 'Tray'),
+(2, 29, 6, 'Box'),
+(5, 39, 5, 'Freezer'),
+(2, 85, 13, 'Cabinet'),
+(7, 58, 15, 'Tray'),
+(8, 48, 10, 'Box'),
+(8, 90, 14, 'Freezer'),
+(10, 35, 7, 'Cabinet'),
+(1, 38, 11, 'Tray'),
+(2, 9, 6, 'Box'),
+(3, 0, 9, 'Freezer'),
+(3, 31, 8, 'Tray'),
+(5, 64, 16, 'Cabinet'),
+(6, 0, 18, 'Box'),
+(7, 21, 5, 'Tray'),
+(1, 1, 7, 'Freezer'),
+(9, 62, 12, 'Cabinet'),
+(1, 55, 10, 'Tray'),
+(1, 60, 8, 'Box'),
+(5, 49, 14, 'Cabinet'),
+(9, 36, 13, 'Tray'),
+(2, 0, 9, 'Freezer'),
+(7, 47, 11, 'Cabinet'),
+(2, 26, 6, 'Tray'),
+(3, 1, 8, 'Box'),
+(3, 86, 17, 'Freezer'),
+(10, 0, 10, 'Tray'),
+(5, 3, 15, 'Cabinet'),
+(4,1,12,'Tray');
 
 SELECT * FROM grocery.inventory;
 
