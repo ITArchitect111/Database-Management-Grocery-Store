@@ -1,0 +1,22 @@
+INSERT INTO grocery.purchase (Pur_P_ID, Pur_C_ID, PurchaseDate, Quantity, AmountPaid, Method)
+
+
+SELECT * FROM grocery.purchase;
+
+SELECT 
+  cu.CustomerName,
+  pr.ProdName,
+  pu.Quantity,
+  pr.Price,
+  (pr.Price * pu.Quantity) AS ExpectedAmount,
+  pu.AmountPaid,
+  CASE
+    WHEN pu.AmountPaid >= (pr.Price * pu.Quantity) THEN 'No Balance'
+    ELSE CONCAT('Balance: ', (pr.Price * pu.Quantity) - pu.AmountPaid)
+  END AS PaymentStatus
+FROM 
+  grocery.purchase pu
+JOIN 
+  grocery.product pr ON pu.Pur_P_ID = pr.P_ID
+JOIN 
+  grocery.customer cu ON pu.Pur_C_ID = cu.C_ID;
