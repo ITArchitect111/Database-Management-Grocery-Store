@@ -3,6 +3,11 @@ INSERT INTO grocery.customer (CustomerName, Address) VALUES
 ('Joel Ramos', 'Imus, Cavite'),
 ('Liza Corpuz', 'Lipa City, Batangas'),
 ('Rico Santos', 'Tagum City, Davao del Norte'),
-('Marie Gomez', 'Tuguegarao City, Cagayan');
+('Marie Gomez', 'Tuguegarao City, Cagayan'),
+('Rico Daniel', 'Jones, Isabela'),
+('Joey Balderamos', 'Pasig City, Manila'),
+('Freya Medina', 'Balagtas, Bulucan'),
+('Jayson Tuarez', 'Libona, Bukidnon'),
+('Tyron Juan', 'Baguio City, Benguet');
 
 SELECT * FROM grocery.customer;
