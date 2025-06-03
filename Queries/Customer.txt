@@ -1,8 +1,8 @@
-INSERT INTO grocery.customer (Cus_P_ID, CustomerName, Address) VALUES
-(2, 'Anna Lopez', 'Sta. Maria, Bulacan'),
-(5, 'Joel Ramos', 'Imus, Cavite'),
-(3, 'Liza Corpuz', 'Lipa City, Batangas'),
-(3, 'Rico Santos', 'Tagum City, Davao del Norte'),
-(1, 'Marie Gomez', 'Tuguegarao City, Cagayan');
+INSERT INTO grocery.customer (CustomerName, Address) VALUES
+('Anna Lopez', 'Sta. Maria, Bulacan'),
+('Joel Ramos', 'Imus, Cavite'),
+('Liza Corpuz', 'Lipa City, Batangas'),
+('Rico Santos', 'Tagum City, Davao del Norte'),
+('Marie Gomez', 'Tuguegarao City, Cagayan');
 
 SELECT * FROM grocery.customer;
