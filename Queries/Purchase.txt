@@ -1,4 +1,9 @@
-INSERT INTO grocery.purchase (Pur_P_ID, Pur_C_ID, PurchaseDate, Quantity, AmountPaid, Method)
+INSERT INTO grocery.purchase (Pur_P_ID, Pur_C_ID, PurchaseDate, Quantity, AmountPaid, Method) VALUES
+(10, 2, '2025-01-22', 13, 1553.43, 'Cash'),
+(2, 2, '2025-01-22', 10, 1000, 'Cash'),
+(8, 2, '2025-01-22', 22, 2700, 'Cash'),
+(1, 10, '2025-01-21', 3, 1390, ' E Wallet'),
+(4, 1, '2025-01-21', 9, 2332.23, 'Credit Card');
 
 
 SELECT * FROM grocery.purchase;
