@@ -1,0 +1,11 @@
+UPDATE grocery.sales s
+JOIN (
+    SELECT
+        Pur_ID,
+        DATE_FORMAT(PurchaseDate, '%Y-%m') AS PurchaseMonth,
+        SUM(AmountPaid) OVER (PARTITION BY DATE_FORMAT(PurchaseDate, '%Y-%m')) AS MonthlyTotal
+    FROM grocery.purchase
+) p ON s.Pur_ID = p.Pur_ID
+SET s.MonthlySales = p.MonthlyTotal;
+
+SELECT * FROM grocery.sales;
