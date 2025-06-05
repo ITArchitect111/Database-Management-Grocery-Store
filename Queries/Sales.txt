@@ -1,3 +1,8 @@
+INSERT INTO grocery.sales (Pur_ID, MonthlySales)
+SELECT 
+    p.Pur_ID,
+    SUM(p.AmountPaid) OVER (PARTITION BY DATE_FORMAT(p.PurchaseDate, '%Y-%m')) AS MonthlyTotal
+FROM grocery.purchase p;
 
 
 SELECT * FROM grocery.sales;
