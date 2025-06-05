@@ -7,6 +7,12 @@ FROM grocery.purchase p;
 
 SELECT * FROM grocery.sales;
 
-SET FOREIGN_KEY_CHECKS = 0;
-TRUNCATE TABLE grocery.sales;
-SET FOREIGN_KEY_CHECKS = 1;
+SELECT 
+    Pur_ID,
+    MonthlySales,
+    CASE 
+        WHEN MonthlySales <= 1000 THEN 'The Monthly Sales are Low'
+        WHEN MonthlySales >= 1000 THEN 'The Monthly Sales are High'
+        ELSE 'Normal Sales'
+    END AS SalesAnalysis
+FROM grocery.sales;
