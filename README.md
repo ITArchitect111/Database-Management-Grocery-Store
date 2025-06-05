@@ -17,7 +17,6 @@ The queries includes **Insert**, **Select**, **Update**,**Delete , Joins, Normal
 - Apply Data Types.
 - Practice SQL Queries.
 - Include Case and Logical Statements.
-- Normalize 1st, 2nd, and 3rd.
 
 ---
 
