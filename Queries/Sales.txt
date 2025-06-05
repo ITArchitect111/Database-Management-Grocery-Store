@@ -7,12 +7,15 @@ FROM grocery.purchase p;
 
 SELECT * FROM grocery.sales;
 
-SELECT 
-    Pur_ID,
-    MonthlySales,
+SELECT
+	p.Pur_ID,
+     p.PurchaseDate AS MonthDate,
+    s.MonthlySales,
     CASE 
         WHEN MonthlySales <= 1000 THEN 'The Monthly Sales are Low'
         WHEN MonthlySales >= 1000 THEN 'The Monthly Sales are High'
         ELSE 'Normal Sales'
     END AS SalesAnalysis
-FROM grocery.sales;
+FROM grocery.sales s
+JOIN 
+grocery.purchase p ON s.Pur_ID = p.Pur_ID;
